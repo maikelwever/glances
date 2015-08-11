@@ -41,7 +41,7 @@ class Export(GlancesExport):
 
         # Set the output file
         try:
-            self.log_file = open(self.filename, 'w+')
+            self.log_file = open(self.filename, 'a')
         except IOError as e:
             logger.critical("Cannot create the logfile: {0}".format(e))
             sys.exit(2)
