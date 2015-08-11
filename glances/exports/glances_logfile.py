@@ -82,7 +82,7 @@ class Export(GlancesExport):
             key = data['key']
             unit = data[key]
 
-        self.log_file.write("{0} - {1} - {2} - {3}\n".format(
-            cur_time, plugin, unit,
-            ", ".join(["{0}:{1}".format(*i) for i in sorted(data.items()) if i[0] not in ['key', key]])
-        ))
+        for i in data.items():
+            if i[0] not in ['key', key]:
+                self.log_file.write("{0} - {1} - {2} - {3} - {4} - {5}\n".format(
+                    cur_time, plugin, unit, i[0], i[1]))
