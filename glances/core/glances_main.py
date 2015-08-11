@@ -136,6 +136,8 @@ Start the client browser (browser mode):\n\
         # Export modules feature
         parser.add_argument('--export-csv', default=None,
                             dest='export_csv', help='export stats to a CSV file')
+        parser.add_argument('--export-logfile', default=None,
+                            dest='export_logfile', help='export stats to a logfile')
         parser.add_argument('--export-influxdb', action='store_true', default=False,
                             dest='export_influxdb', help='export stats to an InfluxDB server (influxdb needed)')
         parser.add_argument('--export-statsd', action='store_true', default=False,
